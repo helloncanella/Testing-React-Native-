@@ -33,6 +33,6 @@ One more thing:
     
     }
 
-You are using the constant `credentials` in your tests. However, it is defined in the scope of clickOnLoginBtn. Your specs don’t have access to it.
+You are using the constant `credentials` in your tests. However, it is defined in the scope of `clickOnLoginBtn`. Your specs don’t have access to it.
 
 
