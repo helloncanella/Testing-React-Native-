@@ -22,9 +22,13 @@ const Login = proxyquireStrict('./Login.js', {
   'react-native-meteor': Meteor,
   'react-native-router-flux': Router,
   // No need to mock RN, react-native-mock already did that
-  // for us ;) 
-});
+  // for us ;)
+}).default;
 
+const credentials = {
+    email: 'user@email.com',
+    password: 'password',
+  };
 
 describe('<Login/>', () => {
   it('should call Meteor.loginWithPassword whenever TouchableHighlight gets pressed', () => {
@@ -60,11 +64,9 @@ describe('<Login/>', () => {
 });
 
 function clickOnLoginBtn(){
+
   const wrapper = shallow(<Login/>);
-  const credentials = {
-    email: 'user@email.com',
-    password: 'password',
-  };
+  
   // Set the state
   wrapper.setState(credentials);
   // Force the call for onPress prop so we can detect
